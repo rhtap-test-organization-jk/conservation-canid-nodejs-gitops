@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:         
+  argocd/app-name: conservation-canid-nodejs
+  janus-idp.io/tekton: conservation-canid-nodejs
+  backstage.io/kubernetes-id: conservation-canid-nodejs
+  backstage.io/kubernetes-namespace: rhtap-app 
+  app.kubernetes.io/part-of: conservation-canid-nodejs
+resources: 
+- deployment.yaml
+- route.yaml
+- service.yaml
